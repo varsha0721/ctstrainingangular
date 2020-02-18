@@ -1,0 +1,53 @@
+<!-- <div>
+    <h1 *ngIf="hasError">Hello form if</h1>
+    <h1 *ngIf="!hasError">Hello form else</h1>
+</div>
+
+<h1 *ngIf="hasError; else:elseBlock; then: ifBlock"></h1>
+
+<ng-template #elseBlock>
+    <h1>hello from another else</h1>
+</ng-template>
+
+<ng-template #ifBlock>
+    <h1>hello from another if</h1>
+</ng-template>
+
+<button *ngIf="!isLoggedIn" class="btn btn-primary">Login</button>
+<button *ngIf="isLoggedIn" class="btn btn-danger">Logout</button> -->
+
+<div [ngSwitch]="number1">
+    <h1 *ngSwitchCase="'one'">1</h1>
+    <h1 *ngSwitchCase="'two'">2</h1>
+    <h1 *ngSwitchCase="'three'">3</h1>
+    <h1 *ngSwitchDefault>please choose correct </h1>
+</div>
+
+<div [ngSwitch]="number2">
+    <h1 *ngSwitchCase="1">one</h1>
+    <h1 *ngSwitchCase="2">two</h1>
+    <h1 *ngSwitchCase="3">three</h1>
+    <h1 *ngSwitchDefault>please choose correct </h1>
+</div>
+
+<div class='table-responsive'>  
+    <table class='table'>   
+      
+        <thead>  
+            <tr>  
+                <th>Title</th>  
+                <th>Director</th>  
+                <th>Cast</th>  
+                <th>Release Date</th>  
+            </tr>  
+        </thead>  
+        <tbody>  
+            <tr *ngFor="let movie of movies;">  
+                <td>{{movie.title}}</td>  
+                <td>{{movie.director | uppercase}}</td>  
+                <td>{{movie.cast}}</td>  
+                <td>{{movie.releaseDate | date: 'longDate'}}</td>  
+            </tr>  
+        </tbody>  
+    </table>  
+</div>  

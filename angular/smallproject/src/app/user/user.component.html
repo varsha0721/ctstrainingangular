@@ -1,0 +1,20 @@
+<!-- {{personData | json}} -->
+<table class="table">
+    <thead>
+      <tr>
+        <th>userId</th>
+        <th>id</th>
+        <th>Title</th>
+        <th>Body</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pd of personData">
+        <td>{{ pd.userId }}</td>
+        <td>{{ pd.id }}</td>
+        <td>{{ pd.title }}</td>
+        <td>{{ pd.body }}</td>
+      </tr>
+     
+    </tbody>
+  </table>
