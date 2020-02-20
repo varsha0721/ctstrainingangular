@@ -1,0 +1,89 @@
+<div class="containor">
+
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+
+                {{ userForm.value | json }}
+                <br>
+                {{ userModel | json}}
+                
+
+                <h2>Registration</h2>
+                <div class="form-group">
+                    <label for="">username</label>
+                    <input #username="ngModel" [ngModel]="userModel.username" name="username" type="text" class="form-control" [class.is-invalid]="username.invalid && username.touched" [class.is-valid]="username.valid" required>
+                    <small class="text-danger" [class.d-none]="username.valid || username.untouched"> invalid and required </small>
+                </div>
+               
+                <div class="form-group">
+                    <label for="">email</label>
+                    <input [ngModel]="userModel.email" name="email" type="text" class="form-control">
+                </div>
+            
+                <div class="form-group">
+                    <label for="">phone</label>
+                    <input #phone = "ngModel" [ngModel]="userModel.phone" name="phone" type="number" class="form-control" required pattern="^\d{10}$" [class.is-invalid]="phone.invalid || phone.touched" >
+                    <div *ngIf = "phone.errors && (phone.invalid || phone.touched)">
+                        <small *ngIf="phone.errors.required">this is required</small>
+                        <small *ngIf="phone.errors.pattern">use proper format</small>
+                    </div>
+                    
+                </div>
+            
+                <div class="form-group">
+                    <label for="">Intrest</label>
+                    <select [ngModel]="userModel.intrest" name="option" class="form-control">
+                        <option *ngFor="let intrest of intrests">{{ intrest }}</option>
+                    </select>
+                </div>
+            
+                <fieldset class="form-group">
+                    <div class="row">
+                      <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+                      <div class="col-sm-10">
+                        <div class="form-check">
+                          <input [ngModel]="userModel.gender" class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                          <label class="form-check-label" for="gridRadios1">
+                            Male
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input  [ngModel]="userModel.gender" class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                          <label class="form-check-label" for="gridRadios2">
+                            Female
+                          </label>
+                        </div>
+                        <div class="form-check disabled">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                          <label class="form-check-label" for="gridRadios3">
+                            Third disabled radio
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <div class="form-group row">
+                    <div class="col-sm-2">Checkbox</div>
+                    <div class="col-sm-10">
+                      <div   class="form-check" >
+                        <input [ngModel]="userModel.checkbox" name="checkbox" class="form-check-input" type="checkbox" id="gridCheck1" >
+                        <label class="form-check-label" for="gridCheck1">
+                          1 checkbox
+                        </label>
+                      </div>
+                      <div class="form-check" >
+                        <input [ngModel]="userModel.checkbox" name="checkbox" class="form-check-input" type="checkbox" id="gridCheck1" >
+                        <label class="form-check-label" for="gridCheck1">
+                          2 checkbox
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <input type="button" [disabled]="!userForm.valid" value="login" class="btn btn-primary">
+                </form>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>  
+</div>
