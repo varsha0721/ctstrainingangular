@@ -1,7 +1,37 @@
 <div class="containor">
     <h1>login</h1>
-    <form>
-        <div class="form-group" [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)">
+    
+    <!-- <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)" > -->
+     <form [formGroup]="userForm" >
+        {{userForm.value | json }}
+        <div class="form-group" >
+            <label for="">fname</label>
+            <input type="text" class="form-control" formControlName="fname">
+        </div>
+
+        <div class="form-group" >
+            <label for="">lanme</label>
+            <input type="text" class="form-control" formControlName="lname">
+        </div>
+
+        <!-- nested form -->
+       <div formGroupName="address">  <!--  address obj contains(house, city, state) -->
+        <div class="form-group" >
+            <label for="">house</label>
+            <input type="text" class="form-control" formControlName="house">
+        </div>
+
+        <div class="form-group" >
+            <label for="">city</label>
+            <input type="text" class="form-control" formControlName="city">
+        </div>
+
+        <div class="form-group" >
+            <label for="">state</label>
+            <input type="text" class="form-control" formControlName="state">
+        </div>
+        </div>
+        <!-- <div class="form-group" >
             <label for="">email</label>
             <input type="text" class="form-control" formControlName="email">
         </div>
@@ -9,8 +39,8 @@
         <div class="form-group">
             <label for="">password</label>
             <input type="text" class="form-control" formControlName="password">
-        </div>
+        </div> -->
 
-        <input type="submit" value="login">
+        <!-- <input type="submit" value="login"> -->
     </form>
 </div>
