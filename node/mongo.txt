@@ -1,0 +1,22 @@
+mongo
+show dbs
+use demo
+show collections
+db.users.insert({"name":"mark"})
+db.users.insert({"name":"mark","phone": 99999})
+db.users.drop()
+db.users.find()
+db.students.count()
+db.students.insert([{"name":"A"},{"name":"B"},{"name":"C"}])
+db.users.insertOne({"name":"mark"})
+db.students.insertMany([{"name":"A"},{"name":"B"},{"name":"C"}])
+db.users.insert({_id:1,"name":"mark"})
+db.students.save({"name":"abc"})
+db.students.save({_id:1,"name":"abc"})
+db.students.insert({"name":"mark", address:{"house": 27, "city":"abc", "state":"karnataka"}})
+db.students.find({name: "mark"})
+db.students.find({"address.state":"rajasthan"}).pretty()
+db.students.find({name:"mark", "address.state":"rajasthan"}).pretty()   (and operator)
+db.students.find({$or:[{name:"mark"}, {"address.state":"rajasthan"}]}).pretty()  (or operator)
+db.students.updateOne({name: "mark"},$set: {name: "james"}) (update)
+db.students.deleteOne({name: "mark"},{$set: {phone: 41111}}) (delete)
