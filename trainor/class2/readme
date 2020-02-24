@@ -1,0 +1,148 @@
+# CSS
+
+Cascading style sheet
+
+CSS is mainly use for styling web pages
+We can declare CSS in 3 ways
+
+1. External CSS
+2. Internal CSS
+3. Inline CSS
+
+
+# External CSS
+> It is a single which can be use for styling the entire
+ web site
+> We can use external CSS file to create them or to define
+  common style classes which we want to use in the entire
+  website
+> we can create a file with extension .css
+
+# Internal CSS
+> It is use to style a specific web page for eg Home, 
+  contact
+> In internal css we decalre all css classes in the 
+  <style> tag under <head> 
+
+# Inline CSS
+> It is use to style any specific html element individually
+> we can declare style while writing Html 
+
+
+We can override external css with internal css
+and override internal css with inline css
+the maximum importance is givin to the css which is
+closest to the html element
+
+
+Inline > Internal > External
+
+In CSS we define css in 3 ways
+
+element name
+Id - #
+class - .
+
+
+
+# Properties
+> color
+> font-size
+> font-family
+
+
+margin-top;
+margin-bottom;
+margin-left;
+margin-right
+margin: 10px  // all
+margin: 10px 20px  // top/bottom   left/right
+margin: 10px 20px 30px 40px  // top right bottom left
+
+padding
+
+border;
+list-style;
+display;
+text-decoration;
+border-radius;
+
+# Styling Forms
+
+
+# Bootstrap
+> To make resposive design 
+Resposive which can adjust on any screen
+
+Laptop
+Desktop
+Tab
+Mobile
+
+
+Bootstrap is a CSS library or framework meant specially
+for desinging web pages
+It was develop by twitter
+
+There are inbuild component which we can use in you website
+
+
+# How to install Bootstrap
+1.  Manually
+    Download the bootstrap zip folder from the website and incluide
+    in your project
+
+2. using CDN link
+   content delivery network
+   highly server which we can use to hodt all the static
+  content
+
+
+
+danger - red
+success - green
+warning - yellow
+info - blue
+default - blue
+
+
+
+# Grid System
+Bootstrap divide the entire web page into 12 column
+
+lg - 
+md
+sm
+xsm
+xxsm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
